@@ -8,9 +8,23 @@
   <body>
     <main>
       <h1>Multimodalne badanie reakcji użytkownika</h1>
-      <p>podaj kod:</p><input type="text" />
-      <button>Begin Test</button>
+
+       <form id="formularz">
+        <label for="kod">Podaj kod:</label>
+        <input type="text" id="kod" name="kod" required />
+        <button type="submit">Begin Test</button>
+      </form>
+
       <p>Strona startowa projektu. Moduł badania zostanie dodany później.</p>
+      <a href="/">Strona startowa</a><br>
+      <a href="/calibration">Kalibracja</a><br>
+      <a href="/experiment">Badanie</a>
     </main>
+  <script>
+      document.getElementById("formularz").addEventListener("submit", function (event) {
+          event.preventDefault();
+          window.location.href = "/experiment";
+        });
+    </script>
   </body>
 </html>
